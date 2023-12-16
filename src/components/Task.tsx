@@ -1,13 +1,13 @@
 type Props = {
-    task: string
-    deleteTask: () => void
-}
+  task: string;
+  deleteTask: () => void;
+};
 
-export const Task = ({task, deleteTask}: Props) => {
+export const Task = ({ task, deleteTask }: Props) => {
   return (
     <div className="task">
-        <span>{task}</span>
-        <button onClick={deleteTask}>borrar</button>
+      <span>{task}</span>
+      <button onClick={deleteTask}>borrar</button>
     </div>
-  )
-}
+  );
+};
