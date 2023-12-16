@@ -11,6 +11,12 @@ export const TodoApp = () => {
         setNewTask('')
     }
 
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        handleAddTask();
+      }
+    };
+
     const handleDeleteTask = (index: number) => {
         setTodoList(tareas => tareas.filter((_, i) => i !== index))
     }
@@ -21,7 +27,8 @@ export const TodoApp = () => {
         <input 
         type="text" 
         value={newTask} 
-        onChange={(e) => setNewTask(e.target.value)} 
+        onChange={(e) => setNewTask(e.target.value)}
+        onKeyDown={handleKeyPress} 
         placeholder="Nueva Tarea" />
       <button onClick={handleAddTask}>agregar tarea</button>
       </div>
